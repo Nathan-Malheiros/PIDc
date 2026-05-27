@@ -1,0 +1,11 @@
+Command: C:\Espressif\tools\python\v6.0.1\venv\Scripts\python.exe C:\esp\v6.0.1\esp-idf\tools/idf_monitor.py -p COM11 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\natha\OneDrive\Documentos\Unifor Note\Controle\PIDc\build\ball_balancer.elf C:\Users\natha\OneDrive\Documentos\Unifor Note\Controle\PIDc\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0.1\venv\Scripts\python.exe' 'C:\esp\v6.0.1\esp-idf\tools\idf.py' '-p' 'COM11' '-b' '115200'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM11 instead...[0m
+[0;33m--- esp-idf-monitor 1.9.0 on \\.\COM11 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- Connection to \\.\COM11 failed. Available ports:
+--- COM11
+--- COM3
+--- COM5
+--- COM4[0m
+[0m

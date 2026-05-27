@@ -1,0 +1,22 @@
+[2026-05-26 15:18:49] === Ferramenta iniciada ===
+[2026-05-26 15:18:54] fullclean+build start
+[2026-05-26 15:19:09] ec=2 dur=14s
+[2026-05-26 15:26:53] === Ferramenta iniciada ===
+[2026-05-26 15:26:56] build start
+[2026-05-26 15:29:24] ec=0 dur=147s
+[2026-05-26 15:29:47] flash+monitor COM11
+[2026-05-26 15:30:08] flash+monitor COM11
+[2026-05-26 15:30:21] flash+monitor COM11
+[2026-05-26 15:38:13] === Ferramenta iniciada ===
+[2026-05-26 15:38:18] monitor COM11
+[2026-05-26 16:09:10] === Ferramenta iniciada ===
+[2026-05-26 16:09:12] build start
+[2026-05-26 16:11:19] ec=0 dur=127s
+[2026-05-26 16:11:38] flash+monitor COM11
+[2026-05-26 16:12:40] === Ferramenta iniciada ===
+[2026-05-26 16:12:41] ERRO: Traceback (most recent call last):
+[2026-05-26 16:17:51] === Ferramenta iniciada ===
+[2026-05-26 16:17:55] build start
+[2026-05-26 16:20:11] ec=0 dur=136s
+[2026-05-26 16:20:25] flash+monitor COM11
+[2026-05-26 16:20:58] === Ferramenta iniciada ===

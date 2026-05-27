@@ -1,0 +1,9 @@
+Command: cmake -G Ninja -B C:\Users\natha\OneDrive\Documentos\Unifor Note\Controle\PIDc\build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Users\natha\.espressif\python_env\idf6.0_py3.14_env\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=True C:\Users\natha\OneDrive\Documentos\Unifor Note\Controle\PIDc
+Configuration Report               
++---------------------------------+
+|  Parser Version: 1              |
+|  Verbosity: default             |
+|  Defaults policy: sdkconfig     |
+|  Status: Finished successfully  |
+|                                 |
++---------------------------------+
