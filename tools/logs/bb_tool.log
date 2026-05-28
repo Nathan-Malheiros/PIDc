@@ -24,3 +24,5 @@
 [2026-05-27 17:42:39] fullclean+build start
 [2026-05-27 17:45:20] ec=0 dur=161s
 [2026-05-27 17:46:29] flash+monitor COM11
+[2026-05-27 21:07:35] === Ferramenta iniciada ===
+[2026-05-27 21:07:46] monitor COM11

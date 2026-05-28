@@ -39,15 +39,15 @@
  * Calibracao: valores ADC brutos nas bordas da tela.
  * Use tools/calibrate.py para obter os valores corretos do seu painel.
  * ----------------------------------------------------------------------- */
-#define TOUCH_X_RAW_MIN    2346
-#define TOUCH_X_RAW_MAX    4089
-#define TOUCH_Y_RAW_MIN    2737
-#define TOUCH_Y_RAW_MAX    4018
+#define TOUCH_X_RAW_MIN    3006
+#define TOUCH_X_RAW_MAX    4052
+#define TOUCH_Y_RAW_MIN    2687
+#define TOUCH_Y_RAW_MAX    3924
 
 /* Inversao de eixo — mude para 1 se o eixo estiver espelhado.
  * Use tools/calibrate.py: ele detecta e imprime o valor correto. */
-#define TOUCH_X_INVERT     0   /* 1 = inverter X (biblioteca original inverte) */
-#define TOUCH_Y_INVERT     0   /* 1 = inverter Y                                */
+#define TOUCH_X_INVERT     1   /* 1 = inverter X (biblioteca original inverte) */
+#define TOUCH_Y_INVERT     1   /* 1 = inverter Y                                */
 #define TOUCH_SWAP_XY      0   /* 1 = trocar eixos X e Y                        */
 
 /* Amostras ADC por eixo — media aparada (descarta 25% superior e inferior) */

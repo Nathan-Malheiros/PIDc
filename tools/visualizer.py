@@ -181,11 +181,17 @@ def draw_top_view(surf, ball_xy, last_ball, trail_snap, font_sm):
 
     pygame.draw.rect(surf, C_BORDER, (TOP_X, TOP_Y, PF_W, PF_H), 2)
 
-    for i in range(1, len(trail_snap)):
-        t = i / max(1, len(trail_snap))
-        pygame.draw.line(surf, lerp_c(C_TRAIL_A, C_TRAIL_B, t),
-                         top_px(*trail_snap[i - 1]), top_px(*trail_snap[i]),
-                         max(1, int(t * 3)))
+    prev = None
+    for i, pt in enumerate(trail_snap):
+        if pt is None:
+            prev = None   # quebra de segmento: bola foi levantada
+            continue
+        if prev is not None:
+            t = i / max(1, len(trail_snap))
+            pygame.draw.line(surf, lerp_c(C_TRAIL_A, C_TRAIL_B, t),
+                             top_px(*prev), top_px(*pt),
+                             max(1, int(t * 3)))
+        prev = pt
 
     if ball_xy:
         bx, by = top_px(*ball_xy)
@@ -322,14 +328,15 @@ def draw_footer(surf, ball_xy, last_ball, status, font_sm, font_md):
 
 class BallVisualizer:
     def __init__(self, port, baud=115200):
-        self.port      = port
-        self.baud      = baud
-        self.ball      = None
-        self.last_ball = None   # ultima posicao valida recebida
-        self.trail     = deque(maxlen=TRAIL_LEN)
-        self.status    = "Conectando..."
-        self.running   = True
-        self._lock     = threading.Lock()
+        self.port         = port
+        self.baud         = baud
+        self.ball         = None
+        self.last_ball    = None   # ultima posicao valida recebida
+        self.trail        = deque(maxlen=TRAIL_LEN)
+        self.status       = "Conectando..."
+        self.running      = True
+        self._lock        = threading.Lock()
+        self._trail_break = False  # marca que a bola foi levantada
 
     def _serial_reader(self):
         try:
@@ -344,13 +351,17 @@ class BallVisualizer:
                     line = raw.decode("utf-8", errors="ignore").strip()
                     if line == "NONE":
                         with self._lock:
-                            self.ball = None
+                            self.ball         = None
+                            self._trail_break = True   # proximo toque inicia novo segmento
                             # last_ball mantido intencionalmente
                     elif line.startswith("X:"):
                         parts = line.split(",")
                         x = float(parts[0].split(":")[1])
                         y = float(parts[1].split(":")[1])
                         with self._lock:
+                            if self._trail_break:
+                                self.trail.append(None)   # separador de segmento
+                                self._trail_break = False
                             self.ball      = (x, y)
                             self.last_ball = (x, y)
                             self.trail.append((x, y))
@@ -382,7 +393,8 @@ class BallVisualizer:
                     elif event.key == pygame.K_c:
                         with self._lock:
                             self.trail.clear()
-                            self.last_ball = None
+                            self.last_ball    = None
+                            self._trail_break = False
 
             with self._lock:
                 ball       = self.ball

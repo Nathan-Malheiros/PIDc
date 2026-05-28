@@ -1,8 +1,8 @@
-#define TOUCH_X_RAW_MIN    2346
-#define TOUCH_X_RAW_MAX    4089
-#define TOUCH_Y_RAW_MIN    2737
-#define TOUCH_Y_RAW_MAX    4018
+#define TOUCH_X_RAW_MIN    3006
+#define TOUCH_X_RAW_MAX    4052
+#define TOUCH_Y_RAW_MIN    2687
+#define TOUCH_Y_RAW_MAX    3924
 
-#define TOUCH_X_INVERT     0
-#define TOUCH_Y_INVERT     0
+#define TOUCH_X_INVERT     1
+#define TOUCH_Y_INVERT     1
 #define TOUCH_SWAP_XY      0

@@ -18,8 +18,8 @@ Cada plano tem dois terminais: positivo (+) e negativo (−).
 |---|---|---|---|---|
 | X+ (XP) | Drive HIGH ao ler X / ADC ao ler Y | **GPIO 4** | ADC1_CH3 | Vermelho |
 | X− (XM) | Drive LOW ao ler X | **GPIO 5** | ADC1_CH4 | Preto |
-| Y+ (YP) | Drive HIGH ao ler Y / ADC ao ler X | **GPIO 6** | ADC1_CH5 | Branco |
-| Y− (YM) | Drive LOW ao ler Y | **GPIO 7** | ADC1_CH6 | Verde |
+| Y− (YM) | Drive LOW ao ler Y999999 | **GPIO 6** | ADC1_CH6 | Verde |
+| Y+ (YP) | Drive HIGH ao ler Y / ADC ao ler X | **GPIO 7** | ADC1_CH5 | Branco |
 
 > **Nota sobre o conector FPC:** a ordem dos pinos varia por fabricante.
 > Se a posição reportada ficar espelhada ou com eixos trocados, ajuste os
